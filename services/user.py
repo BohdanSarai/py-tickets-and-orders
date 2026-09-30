@@ -36,7 +36,7 @@ def update_user(
         email: str | None = None,
         first_name: str | None = None,
         last_name: str | None = None,
-) -> None:
+) -> User:
     user = get_user(user_id)
     if username is not None:
         user.username = username
@@ -50,3 +50,5 @@ def update_user(
         user.last_name = last_name
 
     user.save()
+
+    return user
